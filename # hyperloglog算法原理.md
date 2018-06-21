@@ -61,7 +61,6 @@ if DV_est > ( 1/30 * 2^32 ):  # large range correction
      DV = -2^32 * log( 1 - DV_est/2^32)
 ```
 
-### 遇到的问题
 #### druid导入时报错：
 部分错误信息：Container [pid=70947,containerID=container_e22_1432969244945_6026_01_000075] is running beyond physical memory limits. Current usage: 4.0 GB of 4 GB physical memory used; 5.8 GB of 8.4 GB virtual memory used. Killing container.
 原因分析：
