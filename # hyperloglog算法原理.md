@@ -1,5 +1,4 @@
 # # hyperloglog算法原理
-#iqiyi/调研/druid/uv计算
 
 ### 算法流程
 	1. h:表示原始数据的hash值；
@@ -8,15 +7,15 @@
 	4. 对于h中的每个数，j为前b+1位；
 	5. M为b+1位之后第一个1的位置；
 	6. 将M[j]设置为max(M[j], w);
-![](%23%20hyperloglog%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/CE1D4EAE-B4A7-413F-A2F8-049A8A2A635C.png)
+![](https://github.com/qunwoods/Data-Analysis/blob/master/CE1D4EAE-B4A7-413F-A2F8-049A8A2A635C.png)
 	7. 根据公式计算基数值（其中alpha为偏差偏差矫正）
-![](%23%20hyperloglog%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/EC55C098-71AD-41CB-A65E-F249ECE87056.png)
+![](https://github.com/qunwoods/Data-Analysis/blob/master/EC55C098-71AD-41CB-A65E-F249ECE87056.png)
 
 算法为代码（加入偏差矫正）：
 [Sketch of the Day: HyperLogLog — Cornerstone of a Big Data Infrastructure – AK Tech Blog](http://content.research.neustar.biz/blog/hll.html
 http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf
-![](%23%20hyperloglog%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/BB03711F-F629-4F53-BAEB-E221591C1C00.png)
-![](%23%20hyperloglog%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/05ADCED5-0751-4D3F-BFBD-021E77DF7384.png)
+![](https://github.com/qunwoods/Data-Analysis/blob/master/BB03711F-F629-4F53-BAEB-E221591C1C00.png)
+![](https://github.com/qunwoods/Data-Analysis/blob/master/05ADCED5-0751-4D3F-BFBD-021E77DF7384.png)
 javascript实现：
 ```javascript
 // b表示hash值的b位用来标识在registers中的位置，所以register的大小为2^b;
